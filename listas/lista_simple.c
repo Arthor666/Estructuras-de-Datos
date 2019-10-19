@@ -10,6 +10,7 @@ void aumenta_memoria();
 void ingresa_dato();
 void muestra();
 void inicializa_lista();
+int buscar();
 
 struct lista *cabeza=NULL;
 int contador=0;
@@ -30,6 +31,9 @@ int main(){
       break;
       case 2:
         muestra();
+      break;
+      case 3:
+        buscar();
       break;
     }
   }while (opc!=0);
@@ -75,4 +79,18 @@ void muestra(){
   for ( i = 0; i <contador; i++) {
     printf("%d,",(cabeza+i)->dato);
   }
+}
+
+int  buscar(){
+  int find=0;
+  printf("Dame el dato que quieres buscar en la lista\n");
+  scanf("%d", &find);
+  int i;
+  for ( i = 0; i < contador; i++) {
+    if((cabeza+i)->dato==find){
+        printf("El dato %d esta en la posición %d",(cabeza+i)->dato,i );
+        return 0;
+    }
+  }
+  printf("El dato %d no esta en la lista",find);
 }
