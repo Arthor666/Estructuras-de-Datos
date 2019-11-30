@@ -1,47 +1,5 @@
-#include<stdlib.h>
-#include<stdio.h>
-
-struct lista_doble {
-  int dato;
-  struct lista_doble*siguiente;
-  struct lista_doble*anterior;
-};
-
+#include "ligada.h"
 struct lista_doble *cabeza = NULL;
-
-void inserta();
-void inicializa();
-void muestra();
-int borrar();
-int reemplaza();
-
-int main(){
-  int opc=0;
-  do{
-    printf("\nQue deseas hacer ?");
-    printf("\n1) Insertar en la lista");
-    printf("\n2) Borrar de la lista");
-    printf("\n3) Mostrar la lista");
-    printf("\n4) Reemplazar algun dato\n");
-    scanf("%d",&opc);
-    switch (opc) {
-      case 1:
-        inserta();
-      break;
-      case 2:
-      borrar();
-      break;
-      case 3:
-      muestra();
-      break;
-      case 4:
-      reemplaza();
-      break;
-    }
-  }while (opc!= 0);
-  return 0;
-}
-
 void inserta(){
   int dato=0;
   printf("Dameel valor a insertar\n");
